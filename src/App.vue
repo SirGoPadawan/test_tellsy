@@ -1,26 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Top v-model="newList" />
+  <TableUsers v-model="newList" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Top from "./components/Top";
+import TableUsers from "./components/UserTable";
 export default {
-  name: 'App',
+  name: "index",
   components: {
-    HelloWorld
-  }
-}
+    Top,
+    TableUsers,
+  },
+  data() {
+    return {
+      newList: [],
+    };
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
